@@ -3,17 +3,17 @@
 <plist version="1.0">
   <dict>
     <key>PayloadDisplayName</key>
-    <string>NextDNS (a2dd89)</string>
+    <string>NextDNS (9bdf38)</string>
     <key>PayloadDescription</key>
     <string>This profile enables NextDNS on all networks using the native Encrypted DNS feature.</string>
     <key>PayloadIdentifier</key>
-    <string>io.nextdns.a2dd89.profile</string>
+    <string>io.nextdns.9bdf38.profile</string>
     <key>PayloadScope</key>
     <string>System</string>
     <key>PayloadType</key>
     <string>Configuration</string>
     <key>PayloadUUID</key>
-    <string>A1E2F262-DB73-40F6-BD22-2E42A43A3C94.a2dd89</string>
+    <string>19965E9E-B2C8-4807-B64D-043BDA471F44</string>
     <key>PayloadVersion</key>
     <integer>1</integer>
     <key>PayloadContent</key>
@@ -24,7 +24,7 @@
           <key>DNSProtocol</key>
           <string>HTTPS</string>
           <key>ServerURL</key>
-          <string>https://apple.dns.nextdns.io/a2dd89</string>
+          <string>https://dns.nextdns.io/9bdf38</string>
           <key>ServerAddresses</key>
           <array>
             <string>45.90.28.0</string>
@@ -64,11 +64,11 @@
         <key>PayloadType</key>
         <string>com.apple.dnsSettings.managed</string>
         <key>PayloadIdentifier</key>
-        <string>io.nextdns.a2dd89.profile.dnsSettings.managed</string>
+        <string>io.nextdns.9bdf38.profile.dnsSettings.managed</string>
         <key>PayloadUUID</key>
-        <string>A1E2F262-DB73-40F6-BD22-2E42A43A3C94.a2dd89.dnsSettings.managed</string>
+        <string>05D2F980-4B48-4DA0-B663-A788CC8022BB</string>
         <key>PayloadDisplayName</key>
-        <string>NextDNS (a2dd89)</string>
+        <string>NextDNS (9bdf38)</string>
         <key>PayloadOrganization</key>
         <string>NextDNS</string>
         <key>PayloadVersion</key>

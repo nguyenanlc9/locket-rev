@@ -3,13 +3,13 @@
 <plist version="1.0">
   <dict>
     <key>PayloadDisplayName</key>
-    <string>Locket Gold - NextDNS (a2dd89)</string>
+    <string>Locket Gold - NextDNS (9bdf38)</string>
     <key>PayloadDescription</key>
-    <string>Cấu hình DNS mã hóa DoH NextDNS (Profile ID: a2dd89) tối ưu cho Locket Gold, hỗ trợ chặn tracking, telemetry và chống lỗi mạng.</string>
+    <string>Cấu hình DNS mã hóa DoH NextDNS (Profile ID: 9bdf38) tối ưu cho Locket Gold, hỗ trợ chặn tracking, telemetry và chống lỗi mạng.</string>
     <key>PayloadIdentifier</key>
     <string>com.locketgold.dns.profile</string>
     <key>PayloadOrganization</key>
-    <string>BTKhang</string>
+    <string>nguyenanlc9</string>
     <key>PayloadScope</key>
     <string>System</string>
     <key>PayloadType</key>
@@ -38,7 +38,7 @@
           <key>DNSProtocol</key>
           <string>HTTPS</string>
           <key>ServerURL</key>
-          <string>https://apple.dns.nextdns.io/a2dd89</string>
+          <string>https://dns.nextdns.io/9bdf38</string>
           <key>ServerAddresses</key>
           <array>
             <string>45.90.28.0</string>

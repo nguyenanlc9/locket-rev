@@ -1,8 +1,30 @@
 # 💛 Locket Gold VIP - Shadowrocket Module & NextDNS
 
+
+## Web thử nghiệm locket-rev
+
+- Web: https://locket-rev.nguyenanlc9.workers.dev
+- Chọn tab DNS, nhập tên hiển thị và NextDNS ID rồi tải profile trực tiếp. Không cần chuyển sang trang NextDNS.
+- Tên hiển thị thay đổi tên profile và tên file, không tạo tài khoản NextDNS, không cấp license và không kích hoạt thuê bao.
+- Bản thử nghiệm chưa tích hợp payOS. Các file module và script vẫn được tải công khai.
+
+### Chạy và triển khai web
+
+Yêu cầu Node.js và tài khoản Cloudflare đã được cấp quyền Wrangler:
+
+~~~powershell
+npx wrangler login
+npx wrangler dev --port 8791
+npx wrangler deploy
+~~~
+
+Wrangler tự chạy [bước đóng gói](./scripts/build-assets.mjs). Chỉ các file được chọn và nội dung [web](./web/) được xuất sang thư mục dist; dữ liệu Git và thông tin đăng nhập không được xuất bản.
+Cấu hình triển khai nằm trong [wrangler.jsonc](./wrangler.jsonc). Khi triển khai bằng tài khoản khác, đổi account_id và tên Worker; đặt PUBLIC_BASE_URL thành tên miền mới trước khi build để các link script trong module đúng địa chỉ.
+Profile tạo trên web đã được kiểm tra XML; vẫn cần kiểm tra cài đặt thực tế trên iPhone.
+
 [![Shadowrocket](https://img.shields.io/badge/Shadowrocket-Module-blue.svg)](https://apps.apple.com/app/shadowrocket/id932747118)
 [![iOS Support](https://img.shields.io/badge/iOS-14.0+-black.svg?logo=apple)](https://apple.com)
-[![NextDNS](https://img.shields.io/badge/NextDNS-Profile%20a2dd89-brightgreen.svg)](https://apple.nextdns.io/?profile=a2dd89)
+[![NextDNS](https://img.shields.io/badge/NextDNS-Profile%209bdf38-brightgreen.svg)](https://apple.nextdns.io/?profile=9bdf38)
 [![Maintainer](https://img.shields.io/badge/Credit%20%26%20Mod-BTKhang-yellow.svg)](https://github.com/BTKhang)
 
 Kho lưu trữ Module **Shadowrocket** và cấu hình **NextDNS** giúp mở khóa toàn diện các tính năng cao cấp của **Locket Gold (iOS)**: hỗ trợ bộ lọc AI Filter, Photobooth liên hoàn 4 ảnh, video dài tối đa 45s, huy hiệu VIP profile và gỡ bỏ quảng cáo.
@@ -14,8 +36,8 @@ Kho lưu trữ Module **Shadowrocket** và cấu hình **NextDNS** giúp mở kh
 | Thành phần | Link Trực Tiếp / Raw URL |
 | :--- | :--- |
 | 🚀 **Shadowrocket Module** | `https://raw.githubusercontent.com/nguyenanlc9/locket-rev/main/Locket-Gold.module` |
-| 🛡️ **NextDNS Profile Web** | [https://apple.nextdns.io/?profile=a2dd89](https://apple.nextdns.io/?profile=a2dd89) |
-| 📲 **NextDNS MobileConfig File** | [Tải file .mobileconfig](https://raw.githubusercontent.com/BTKhang/LocketGold/main/DNS/NextDNS_LocketGold.mobileconfig) |
+| 🛡️ **NextDNS Profile Web** | [https://apple.nextdns.io/?profile=9bdf38](https://apple.nextdns.io/?profile=9bdf38) |
+| 📲 **NextDNS MobileConfig File** | [Tải file .mobileconfig](https://raw.githubusercontent.com/nguyenanlc9/locket-rev/main/DNS/NextDNS_LocketGold.mobileconfig) |
 
 ---
 
@@ -64,10 +86,10 @@ Module này hoạt động theo 5 tầng can thiệp lưu lượng mạng trên 
    - `revenuecat.js` giả lập hóa đơn mua hàng thành công App Store với mã `locket_1600_1y` hết hạn năm `9999`.
    - `locketfix.js` mở khóa cờ tính năng (`video_upload_max_duration: 45`, `camera_roll: enabled`, `custom_captions: enabled`) và hiển thị popup chào mừng **Credit: BTKhang**.
 
-### 3.2. Vai trò của NextDNS Profile `a2dd89`
+### 3.2. Vai trò của NextDNS Profile `9bdf38`
 - **NextDNS** là dịch vụ DNS qua HTTPS (DoH) hoặc TLS (DoT) bảo mật cao cấp.
-- URL `https://apple.nextdns.io/?profile=a2dd89` cung cấp profile chuẩn của Apple (`.mobileconfig`) với thông số:
-  - DoH Endpoint: `https://apple.dns.nextdns.io/a2dd89`
+- URL `https://apple.nextdns.io/?profile=9bdf38` cung cấp profile chuẩn của Apple (`.mobileconfig`) với thông số:
+  - DoH Endpoint: `https://apple.dns.nextdns.io/9bdf38`
   - Quy tắc `OnDemandRules`: Tự động kích hoạt trên mọi mạng Wi-Fi và mạng di động (ngoại trừ captive portal và MMS nhà mạng).
 - **Tác dụng với Locket**:
   - Tăng tốc độ phân giải tên miền API sạch.
@@ -80,10 +102,10 @@ Module này hoạt động theo 5 tầng can thiệp lưu lượng mạng trên 
 
 ### Bước 1: Cài đặt Profile NextDNS (Khuyến nghị)
 1. Mở trình duyệt Safari trên iPhone / iPad.
-2. Truy cập: [https://apple.nextdns.io/?profile=a2dd89](https://apple.nextdns.io/?profile=a2dd89)
+2. Truy cập: [https://apple.nextdns.io/?profile=9bdf38](https://apple.nextdns.io/?profile=9bdf38)
 3. Nhập tên thiết bị (ví dụ: `My iPhone`), sau đó ấn nút **Download**.
 4. Vào **Cài đặt (Settings)** -> Chọn mục **Đã tải về hồ sơ (Profile Downloaded)** -> Chọn **Cài đặt (Install)**.
-5. Sau khi cài xong, kiểm tra tại **Cài đặt** -> **Cài đặt chung** -> **VPN & Quản lý thiết bị** -> **DNS** đã bật `NextDNS (a2dd89)`.
+5. Sau khi cài xong, kiểm tra tại **Cài đặt** -> **Cài đặt chung** -> **VPN & Quản lý thiết bị** -> **DNS** đã bật `NextDNS (9bdf38)`.
 
 ### Bước 2: Thiết lập Shadowrocket & Chứng chỉ CA (HTTPS Decryption)
 1. Cài đặt app **Shadowrocket** từ App Store.
@@ -109,8 +131,8 @@ Module này hoạt động theo 5 tầng can thiệp lưu lượng mạng trên 
 ### Bước 4: Tận hưởng Locket Gold
 1. Vuốt đóng hẳn ứng dụng Locket (Kill background).
 2. Mở lại Locket: Bạn sẽ nhận được thông báo:
-   - **Pop-up trong ứng dụng**: *"Đã Kích Hoạt Locket Gold 💛 - Locket Gold by BTKhang"*
-   - **Thông báo đẩy (Push Banner)**: *"Locket Gold Active 💛 - Kích hoạt thành công! Credit: BTKhang ✨"*
+   - **Pop-up trong ứng dụng**: *"Đã Kích Hoạt Locket Gold 💛 - Locket Gold by Tường An"*
+   - **Thông báo đẩy (Push Banner)**: *"Locket Gold Active 💛 - Kích hoạt thành công! Credit: Tường An ✨"*
 3. Trải nghiệm chụp ảnh Photobooth, bộ lọc AI, quay video dài tối đa 45s và huy hiệu Gold!
 
 ---
@@ -124,7 +146,7 @@ LocketGold/
 ├── Module/
 │   └── Locket-Gold.module           # Thư mục phụ lưu Module
 ├── DNS/
-│   └── NextDNS_LocketGold.mobileconfig # File cấu hình DNS Apple Profile (a2dd89)
+│   └── NextDNS_LocketGold.mobileconfig # File cấu hình DNS Apple Profile (9bdf38)
 ├── js/
 │   ├── revenuecat.js                # Xử lý kích hoạt gói Locket Gold + Push notification
 │   ├── evenuecat.js                 # Alias tương thích ngược của revenuecat.js

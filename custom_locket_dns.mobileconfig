@@ -5,11 +5,11 @@
 	<key>PayloadDisplayName</key>
 	<string>Custom Locket Gold DNS</string>
 	<key>PayloadDescription</key>
-	<string>Máy chủ DNS riêng tư kích hoạt Locket Gold (DoH &amp; Root CA)</string>
+	<string>Định tuyến các domain Locket qua NextDNS DoH (profile 9bdf38). Profile này không cài chứng chỉ Root CA.</string>
 	<key>PayloadIdentifier</key>
 	<string>com.custom.locketgold.dns.profile</string>
 	<key>PayloadOrganization</key>
-	<string>Custom Network</string>
+	<string>NextDNS</string>
 	<key>PayloadType</key>
 	<string>Configuration</string>
 	<key>PayloadUUID</key>
@@ -31,16 +31,15 @@
 			<key>PayloadVersion</key>
 			<integer>1</integer>
 			<key>PayloadDisplayName</key>
-			<string>Locket Gold DoH Settings</string>
+			<string>Locket DNS via NextDNS</string>
 			<key>PayloadDescription</key>
-			<string>Định tuyến các tên miền Locket / RevenueCat qua DoH Server riêng</string>
+			<string>Định tuyến các tên miền Locket / RevenueCat qua NextDNS DoH</string>
 			<key>DNSSettings</key>
 			<dict>
 				<key>DNSProtocol</key>
 				<string>HTTPS</string>
-				<!-- THAY THẾ URL DOH CỦA BẠN DƯỚI ĐÂY -->
 				<key>ServerURL</key>
-				<string>https://your-dns-server.com/dns-query/your-token</string>
+				<string>https://dns.nextdns.io/9bdf38</string>
 				<!-- Danh sách domain được chỉ định phân giải qua DNS riêng này -->
 				<key>SupplementalMatchDomains</key>
 				<array>
@@ -61,27 +60,6 @@
 					<string>locketcamera.com</string>
 				</array>
 			</dict>
-		</dict>
-
-		<!-- 2. Cài đặt Root CA Certificate vào hệ thống (để tin cậy chứng chỉ SSL MITM Server) -->
-		<dict>
-			<key>PayloadType</key>
-			<string>com.apple.security.root</string>
-			<key>PayloadIdentifier</key>
-			<string>com.custom.locketgold.root.ca</string>
-			<key>PayloadUUID</key>
-			<string>7B9A23E1-6E1D-4D90-9C21-6A8B3C1D5E22</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-			<key>PayloadDisplayName</key>
-			<string>Custom Locket Root CA</string>
-			<key>PayloadDescription</key>
-			<string>Vào Cài đặt > Cài đặt chung > Giới thiệu > Cài đặt tin cậy chứng nhận và bật tin cậy chứng chỉ này.</string>
-			<!-- DÁN CHỨNG CHỈ ROOT CA (DẠNG BASE64 KHÔNG CÓ HEADER - - - BEGIN - - -) VÀO DƯỚI ĐÂY -->
-			<key>PayloadContent</key>
-			<data>
-			MIIF1zCCA7+gAwIBAgIUVVlObPj26RlnVCI/QF9DrfvPWG4wDQYJKoZIhvcNAQELBQAwezELMAkGA1UEBhMCVk4xDDAKBgNVBAgMA0hDTTEMMAoGA1UEBwwDSENNMR8wHQYDVQQKDBZMb2NrZXRHb2xkIFNlcnZlciAyMDI2MQswCQYDVQQLDAJDQTEiMCAGA1UEAwwZTG9ja2V0R29sZCBDdXN0b20gUm9vdCBDQTAeFw0yNjA5MjkxOTMyMTJaFw0zNjA5MjYxOTMyMTJaMHsxCzAJBgNVBAYTAlZOMQwwCgYDVQQIDANHQ00xDDAKBgNVBAcMA0hDTTEfMB0GA1UECgwWTG9ja2V0R29sZCBTZXJ2ZXIgMjAyNjELMAkGA1UECwwCQ0ExIjAgBgNVBAMMGUxvY2tldEdvbGQgQ3VzdG9tIFJvb3QgQ0EwggIiMA0GCSqGSIb3DQEBAQUA...
-			</data>
 		</dict>
 	</array>
 </dict>
