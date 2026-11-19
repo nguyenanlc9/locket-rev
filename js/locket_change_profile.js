@@ -1,3 +1,4 @@
+(function () {
 ﻿/***********************************************
 > Locket AI Filter Modifier, Unblur & Community Gold VIP
 > Phân Phối: Nightmarketserver
@@ -391,3 +392,4 @@ else {
         body: body
     });
 }
+})();

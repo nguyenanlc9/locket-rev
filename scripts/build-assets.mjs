@@ -1,6 +1,7 @@
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = path.join(root, 'dist');
@@ -20,6 +21,16 @@ for (const file of files) {
   let content = await readFile(path.join(root, file), 'utf8');
   if (base && file.endsWith('.module')) {
     content = content.replace(/https:\/\/raw\.githubusercontent\.com\/(?:BTKhang\/LocketGold|nguyenanlc9\/locket-rev)\/(?:refs\/heads\/)?main\//g, base + '/');
+    for (const match of [...content.matchAll(/script-path=([^,\s]+)/g)]) {
+      const url = new URL(match[1]);
+      const relative = url.pathname.slice(new URL(base).pathname.replace(/\/$/, '').length).replace(/^\//, '');
+      if (url.origin !== new URL(base).origin || !/^js\/[\w-]+\.js$/.test(relative)) {
+        throw new Error('Unexpected script path in ' + file + ': ' + url);
+      }
+      const script = await readFile(path.join(root, relative));
+      url.searchParams.set('v', createHash('sha256').update(script).digest('hex').slice(0, 12));
+      content = content.replace('script-path=' + match[1], 'script-path=' + url.href);
+    }
   }
   await mkdir(path.dirname(path.join(output, file)), { recursive: true });
   await writeFile(path.join(output, file), content);

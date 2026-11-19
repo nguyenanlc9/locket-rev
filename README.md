@@ -25,7 +25,7 @@ Profile tạo trên web đã được kiểm tra XML; vẫn cần kiểm tra cà
 [![Shadowrocket](https://img.shields.io/badge/Shadowrocket-Module-blue.svg)](https://apps.apple.com/app/shadowrocket/id932747118)
 [![iOS Support](https://img.shields.io/badge/iOS-14.0+-black.svg?logo=apple)](https://apple.com)
 [![NextDNS](https://img.shields.io/badge/NextDNS-Profile%209bdf38-brightgreen.svg)](https://apple.nextdns.io/?profile=9bdf38)
-[![Maintainer](https://img.shields.io/badge/Credit%20%26%20Mod-BTKhang-yellow.svg)](https://github.com/BTKhang)
+[![Maintainer](https://img.shields.io/badge/Credit%20%26%20Mod-nguyenanlc9-yellow.svg)](https://github.com/nguyenanlc9)
 
 Kho lưu trữ Module **Shadowrocket** và cấu hình **NextDNS** giúp mở khóa toàn diện các tính năng cao cấp của **Locket Gold (iOS)**: hỗ trợ bộ lọc AI Filter, Photobooth liên hoàn 4 ảnh, video dài tối đa 45s, huy hiệu VIP profile và gỡ bỏ quảng cáo.
 
@@ -47,7 +47,7 @@ Kho lưu trữ Module **Shadowrocket** và cấu hình **NextDNS** giúp mở kh
 - 🎬 **Hỗ trợ video 45 giây**: Vượt qua giới hạn mặc định của Locket (10s/15s) lên đến 45 giây.
 - 🎨 **Mở khóa trọn bộ Filter AI & Photobooth 4 ảnh**: Tự động chuyển đổi các filter VIP, unblur ảnh và giả lập luồng chụp photobooth 4 bước không lỗi 422.
 - 👑 **Huy hiệu Profile Gold & Mạng bạn bè VIP**: Tự động gán huy hiệu vương miện / tim vàng cho tài khoản chính và bạn bè trong hệ thống.
-- 🔔 **Thông báo & Pop-up Kích hoạt có Credit**: Hiển thị bảng chào mừng Gold Popup và push notification ghi nhận Credit: **BTKhang**.
+- 🔔 **Thông báo & Pop-up Kích hoạt có Credit**: Hiển thị bảng chào mừng Gold Popup và push notification ghi nhận Credit: **nguyenanlc9**.
 - 🚫 **Chặn Sentry & Telemetry**: Chặn triệt để tracking báo lỗi, chống phát hiện can thiệp và tránh xung đột cache.
 
 ---
@@ -84,7 +84,7 @@ Module này hoạt động theo 5 tầng can thiệp lưu lượng mạng trên 
 2. **Xóa Header Cache**: Khi iOS đã lưu cache trạng thái tài khoản thường, app sẽ gửi `If-None-Match` hoặc `x-revenuecat-etag`. Máy chủ sẽ trả về `304 Not Modified` mà không có dữ liệu JSON. Header Rewrite xóa các header này để ép máy chủ trả về đầy đủ body `200 OK`.
 3. **Cơ chế RevenueCat & Remote Config**:
    - `revenuecat.js` giả lập hóa đơn mua hàng thành công App Store với mã `locket_1600_1y` hết hạn năm `9999`.
-   - `locketfix.js` mở khóa cờ tính năng (`video_upload_max_duration: 45`, `camera_roll: enabled`, `custom_captions: enabled`) và hiển thị popup chào mừng **Credit: BTKhang**.
+   - `locketfix.js` mở khóa cờ tính năng (`video_upload_max_duration: 45`, `camera_roll: enabled`, `custom_captions: enabled`) và hiển thị popup chào mừng **Credit: nguyenanlc9**.
 
 ### 3.2. Vai trò của NextDNS Profile `9bdf38`
 - **NextDNS** là dịch vụ DNS qua HTTPS (DoH) hoặc TLS (DoT) bảo mật cao cấp.

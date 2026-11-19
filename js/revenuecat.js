@@ -1,5 +1,5 @@
 // ========= Locket Gold RevenueCat Injector ========= //
-// Maintainer & Credit: BTKhang
+// Maintainer & Credit: nguyenanlc9
 // Original: NightmarketServer / dhungx
 // =================================================== //
 
@@ -20,7 +20,7 @@ obj.subscriber = obj.subscriber || {};
 obj.subscriber.subscriptions = obj.subscriber.subscriptions || {};
 obj.subscriber.entitlements = obj.subscriber.entitlements || {};
 
-obj.Attention = "Chúc mừng bạn! Kích hoạt Locket Gold thành công bởi BTKhang 💛";
+obj.Attention = "Chúc mừng bạn! Kích hoạt Locket Gold thành công bởi nguyenanlc9 💛";
 
 var NMS = {
   auto_resume_date: null,
@@ -70,9 +70,9 @@ if (match) {
 // Gửi thông báo kích hoạt thành công (Hỗ trợ Shadowrocket, Loon, Surge, Quantumult X)
 try {
   if (typeof $notification !== "undefined") {
-    $notification.post("Locket Gold Active 💛", "Kích hoạt thành công!", "Credit: BTKhang ✨");
+    $notification.post("Locket Gold Active 💛", "Kích hoạt thành công!", "Credit: nguyenanlc9 ✨");
   } else if (typeof $notify !== "undefined") {
-    $notify("Locket Gold Active 💛", "Kích hoạt thành công!", "Credit: BTKhang ✨");
+    $notify("Locket Gold Active 💛", "Kích hoạt thành công!", "Credit: nguyenanlc9 ✨");
   }
 } catch (e) {}
 
