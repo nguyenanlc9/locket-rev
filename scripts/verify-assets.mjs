@@ -8,7 +8,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const remote = process.argv[2]?.replace(/\/$/, '');
 const modules = ['Locket-Gold.module', 'LocketvfilterV1.module', 'Module/Locket-Gold.module'];
 const cache = new Map();
-const normalize = text => text.replace(/\r\n/g, '\n');
+const normalize = text => text.replace(/^\uFEFF/, '').replace(/\r\n/g, '\n');
 async function get(url) {
   if (!cache.has(url)) cache.set(url, (async () => {
     const response = await fetch(url, { signal: AbortSignal.timeout(30000), cache: 'no-store' });
@@ -22,7 +22,7 @@ async function get(url) {
 for (const file of modules) {
   const expected = await readFile(path.join(root, remote?.includes('raw.githubusercontent.com') ? '' : 'dist', file), 'utf8');
   const body = remote ? await (await get(remote + '/' + file)).text() : expected;
-  assert.equal(normalize(body), normalize(expected), 'Stale module: ' + file);
+  assert(normalize(body) === normalize(expected), 'Stale module: ' + file);
   assert(!/BTKhang/i.test(body), 'Old module branding: ' + file);
   const scripts = [...body.matchAll(/script-path=([^,\s]+)/g)];
   assert.equal(scripts.length, 7, 'Expected 7 script paths: ' + file);
@@ -30,7 +30,7 @@ for (const file of modules) {
     const name = new URL(url).pathname.split('/').pop();
     const local = await readFile(path.join(root, 'js', name), 'utf8');
     const script = remote ? await (await get(url)).text() : local;
-    assert.equal(normalize(script), normalize(local), 'Stale script: ' + url);
+    assert(normalize(script) === normalize(local), 'Stale script: ' + url);
     new vm.Script(script, { filename: name });
     if (['revenuecat.js', 'locketfix.js'].includes(name)) assert(!/BTKhang/i.test(script), 'Old credit: ' + name);
   }
