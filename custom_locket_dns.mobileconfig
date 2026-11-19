@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadDisplayName</key>
+	<string>Custom Locket Gold DNS</string>
+	<key>PayloadDescription</key>
+	<string>Máy chủ DNS riêng tư kích hoạt Locket Gold (DoH &amp; Root CA)</string>
+	<key>PayloadIdentifier</key>
+	<string>com.custom.locketgold.dns.profile</string>
+	<key>PayloadOrganization</key>
+	<string>Custom Network</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>E84B1F22-5401-4DC3-8106-25805561AA12</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadContent</key>
+	<array>
+		<!-- 1. Cấu hình DNS-over-HTTPS (DoH) với Match Domains -->
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<key>PayloadIdentifier</key>
+			<string>com.custom.locketgold.dns.settings</string>
+			<key>PayloadUUID</key>
+			<string>A59D3F87-8A7B-4F7D-9D21-1250395D11BC</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadDisplayName</key>
+			<string>Locket Gold DoH Settings</string>
+			<key>PayloadDescription</key>
+			<string>Định tuyến các tên miền Locket / RevenueCat qua DoH Server riêng</string>
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<!-- THAY THẾ URL DOH CỦA BẠN DƯỚI ĐÂY -->
+				<key>ServerURL</key>
+				<string>https://your-dns-server.com/dns-query/your-token</string>
+				<!-- Danh sách domain được chỉ định phân giải qua DNS riêng này -->
+				<key>SupplementalMatchDomains</key>
+				<array>
+					<string>api.revenuecat.com</string>
+					<string>revenuecat.com</string>
+					<string>analytics.revenuecat.com</string>
+					<string>rc-cdn.revenuecat.com</string>
+					<string>sdk.revenuecat.com</string>
+					<string>gateway.revenuecat.com</string>
+					<string>errors.revenuecat.com</string>
+					<string>identity.revenuecat.com</string>
+					<string>customer.revenuecat.com</string>
+					<string>subscriptions.revenuecat.com</string>
+					<string>firebaseremoteconfig.googleapis.com</string>
+					<string>firebaseremoteconfigrealtime.googleapis.com</string>
+					<string>us-central1-locket-4252a.cloudfunctions.net</string>
+					<string>api.locketcamera.com</string>
+					<string>locketcamera.com</string>
+				</array>
+			</dict>
+		</dict>
+
+		<!-- 2. Cài đặt Root CA Certificate vào hệ thống (để tin cậy chứng chỉ SSL MITM Server) -->
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.security.root</string>
+			<key>PayloadIdentifier</key>
+			<string>com.custom.locketgold.root.ca</string>
+			<key>PayloadUUID</key>
+			<string>7B9A23E1-6E1D-4D90-9C21-6A8B3C1D5E22</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadDisplayName</key>
+			<string>Custom Locket Root CA</string>
+			<key>PayloadDescription</key>
+			<string>Vào Cài đặt > Cài đặt chung > Giới thiệu > Cài đặt tin cậy chứng nhận và bật tin cậy chứng chỉ này.</string>
+			<!-- DÁN CHỨNG CHỈ ROOT CA (DẠNG BASE64 KHÔNG CÓ HEADER - - - BEGIN - - -) VÀO DƯỚI ĐÂY -->
+			<key>PayloadContent</key>
+			<data>
+			MIIF1zCCA7+gAwIBAgIUVVlObPj26RlnVCI/QF9DrfvPWG4wDQYJKoZIhvcNAQELBQAwezELMAkGA1UEBhMCVk4xDDAKBgNVBAgMA0hDTTEMMAoGA1UEBwwDSENNMR8wHQYDVQQKDBZMb2NrZXRHb2xkIFNlcnZlciAyMDI2MQswCQYDVQQLDAJDQTEiMCAGA1UEAwwZTG9ja2V0R29sZCBDdXN0b20gUm9vdCBDQTAeFw0yNjA5MjkxOTMyMTJaFw0zNjA5MjYxOTMyMTJaMHsxCzAJBgNVBAYTAlZOMQwwCgYDVQQIDANHQ00xDDAKBgNVBAcMA0hDTTEfMB0GA1UECgwWTG9ja2V0R29sZCBTZXJ2ZXIgMjAyNjELMAkGA1UECwwCQ0ExIjAgBgNVBAMMGUxvY2tldEdvbGQgQ3VzdG9tIFJvb3QgQ0EwggIiMA0GCSqGSIb3DQEBAQUA...
+			</data>
+		</dict>
+	</array>
+</dict>
+</plist>
