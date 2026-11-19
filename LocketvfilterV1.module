@@ -40,7 +40,7 @@ DOMAIN-SUFFIX,ingest.sentry.io,REJECT
 
 [Script]
 # Xóa Header RevenueCat và Firebase
-deleteHeader_RC = type=http-request,pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers),script-path=https://raw.githubusercontent.com/BTKhang/LocketGold/main/js/deleteHeader_RC.js,timeout=60
+deleteHeader_RC = type=http-request,pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers),script-path=https://raw.githubusercontent.com/nguyenanlc9/locket-rev/main/js/deleteHeader_RC.js,timeout=60
 
 deleteHeader_Firebase = type=http-request,pattern=^https?:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+,script-path=https://raw.githubusercontent.com/BTKhang/LocketGold/main/js/deleteHeader_Firebase.js,timeout=60
 

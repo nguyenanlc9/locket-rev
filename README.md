@@ -13,7 +13,7 @@ Kho lưu trữ Module **Shadowrocket** và cấu hình **NextDNS** giúp mở kh
 
 | Thành phần | Link Trực Tiếp / Raw URL |
 | :--- | :--- |
-| 🚀 **Shadowrocket Module** | `https://raw.githubusercontent.com/BTKhang/LocketGold/main/Locket-Gold.module` |
+| 🚀 **Shadowrocket Module** | `https://raw.githubusercontent.com/nguyenanlc9/locket-rev/main/Locket-Gold.module` |
 | 🛡️ **NextDNS Profile Web** | [https://apple.nextdns.io/?profile=a2dd89](https://apple.nextdns.io/?profile=a2dd89) |
 | 📲 **NextDNS MobileConfig File** | [Tải file .mobileconfig](https://raw.githubusercontent.com/BTKhang/LocketGold/main/DNS/NextDNS_LocketGold.mobileconfig) |
 
