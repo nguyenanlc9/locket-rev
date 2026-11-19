@@ -101,7 +101,7 @@ Module này hoạt động theo 5 tầng can thiệp lưu lượng mạng trên 
 2. Nhấn vào mục **Mô-đun (Modules)** -> Nhấn dấu **+** (Góc trên bên phải).
 3. Dán liên kết sau vào ô URL:
    ```
-   https://raw.githubusercontent.com/BTKhang/LocketGold/main/Locket-Gold.module
+   https://raw.githubusercontent.com/nguyenanlc9/locket-rev/main/Locket-Gold.module
    ```
 4. Nhấn **Xong (Done)** để Shadowrocket tải module về.
 5. Trở lại màn hình chính của Shadowrocket, gạt công tắc kết nối sang **Connected**.
@@ -146,5 +146,5 @@ LocketGold/
 
 ---
 
-**Made with 💛 by [BTKhang](https://github.com/BTKhang)**  
+**Made with 💛 by [Tường An](https://github.com/nguyenanlc9)**  
 *Credits to NightmarketServer, MinhHiep08 & dhungx for foundational research.*
