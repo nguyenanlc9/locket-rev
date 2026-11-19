@@ -40,6 +40,7 @@ await writeFile(path.join(output, '_headers'), `/*.mobileconfig
 /Module/*.module
   Content-Type: text/plain; charset=utf-8
 /*
+  Cache-Control: no-cache
   X-Content-Type-Options: nosniff
 `);
 console.log('Built ' + files.length + ' public files' + (base ? ' for ' + base : ''));
